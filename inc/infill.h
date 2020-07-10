@@ -6,7 +6,7 @@
 #include <QDebug>
 
 
-const unsigned int infillStructureAmount = 10;
+const int infillStructureAmount = 10;
 enum InfillStructure
 {
     linear = 0,
@@ -49,11 +49,11 @@ class Infill : public QObject
         ~Infill();
 
         InfillStructure structure();
-        QString structureName();
+        const QString structureName();
 
         unsigned int volume();
 
-        QString toString();
+        const QString toString();
 
         Infill &operator=(const Infill &other);
         bool operator==(const Infill &other);

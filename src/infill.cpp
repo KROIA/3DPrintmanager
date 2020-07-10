@@ -31,7 +31,7 @@ InfillStructure Infill::structure()
 {
     return _structure;
 }
-QString Infill::structureName()
+const QString Infill::structureName()
 {
     return _structureName;
 }
@@ -40,9 +40,9 @@ unsigned int Infill::volume()
 {
     return _volumePercent;
 }
-QString Infill::toString()
+const QString Infill::toString()
 {
-    return "Infill: Structure = "+this->structureName()+
+    return "Infill: Structure = ["+QString::number(structure())+"] -> "+structureName()+
            " Volume = "+QString::number(_volumePercent)+"%";
 }
 Infill &Infill::operator=(const Infill &other)
@@ -65,7 +65,7 @@ void Infill::structure(InfillStructure structure)
 {
     if(_structure == structure)
         return;
-    if(structure >= infillStructureAmount || structure < 0)
+    if(int(structure) >= infillStructureAmount || int(structure) < 0)
     {
         qDebug() << "Error: Infill::structure(InfillStructure structure = ["<<structure
                  <<"]) structure out of range. Min is: 0, Max is: "<<infillStructureAmount-1;

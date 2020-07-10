@@ -33,3 +33,4 @@
 3DPrintmanager.pro.user
 *.stash
 bin/
+*.autosave

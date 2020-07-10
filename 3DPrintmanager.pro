@@ -25,9 +25,17 @@ DEFINES += QT_DEPRECATED_WARNINGS
 incPath = inc
 srcPath = src
 
-CONFIG += c++11
+username     = AlexKrieg
+QT_work_dir  = C:/Users/$$username/Documents/QT
 
-INCLUDEPATH += $$incPath
+CONFIG += c++11
+DLL_buildPath = bin/64bit/build-Release
+configPath   = $$QT_work_dir/DLL/Config
+
+LIBS+= $$configPath/$$DLL_buildPath/Config.dll
+
+INCLUDEPATH += $$incPath \
+               $$configPath
 
 SOURCES += \
         $$srcPath/main.cpp \

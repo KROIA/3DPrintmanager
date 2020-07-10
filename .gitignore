@@ -30,3 +30,6 @@
 *.exe
 *.out
 *.app
+3DPrintmanager.pro.user
+*.stash
+bin/
